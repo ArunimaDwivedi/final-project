@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lost and Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top">
+
+    <!-- Top part with the name and menu -->
+    <div class="top">
+        <h2 class="logo">Lost and Found</h2>
+        <div class="menu">
+            <a href="login.html">Home</a>
+            <a href="#found">Found Items</a>
+            <a href="#report">Report an Item</a>
+            <a href="#rules">Instructions</a>
+            <a href="#how-it-works">How It Works</a>
+            
+        </div>
+    </div>
+
+    <!-- Welcome part -->
+    <div class="welcome">
+        <h1>Welcome to the Lost and Found!</h1>
+        <p>Lost something? Found something? You are in the right place.<br>
+        Look for your lost things here or tell us about things you found.</p>
+
+        <!-- Search box design only,searching needs JavaScript -->
+        <form class="search-area" action="#found" method="get">
+            <input type="text" name="search" placeholder="Search for an item...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- Recently found items -->
+    <div class="box" id="found">
+        <h2>Recently Found Items</h2>
+
+        <div class="items">
+            <div class="item">
+                <p class="pic">🎒</p>
+                <h3>Blue Backpack</h3>
+                <p>Found in the library</p>
+                <p class="date">Oct 6</p>
+                <p class="status found-status">Found</p>
+            </div>
+
+            <div class="item">
+                <p class="pic">🔑</p>
+                <h3>Keys</h3>
+                <p>Found near the gate</p>
+                <p class="date">Oct 5</p>
+                <p class="status found-status">Found</p>
+            </div>
+
+            <div class="item">
+                <p class="pic">📱</p>
+                <h3>Black Phone</h3>
+                <p>Found in the cafeteria</p>
+                <p class="date">Oct 5</p>
+                <p class="status found-status">Found</p>
+            </div>
+
+            <div class="item">
+                <p class="pic">👓</p>
+                <h3>Glasses</h3>
+                <p>Found in room 204</p>
+                <p class="date">Oct 3</p>
+                <p class="status found-status">Found</p>
+            </div>
+        </div>
+    </div>
+    
+    <section class="how-it-works" id="how-it-works">
+      <h2>How It Works</h2>
+      <p class="subtitle">
+         Find or return lost belongings on campus in a few simple steps.
+      </p>
+
+      <div class="steps-container">
+
+          <div class="step">
+              <div class="step-icon">🔐</div>
+              <h3>Step 1: Sign Up or Login</h3>
+                <p>
+                 Create an account or log in to access the
+                 SAU Lost and Found website.
+                </p>
+            </div>
+
+            <div class="step">
+              <div class="step-icon">📝</div>
+              <h3>Step 2: Report an Item</h3>
+              <p>
+                 Select Lost or Found, enter the item details,
+                 location and upload an image if available.
+              </p>
+            </div>
+
+            <div class="step">
+              <div class="step-icon">🔍</div>
+              <h3>Step 3: Search for Items</h3>
+                <p>
+                 Browse the reported items and check whether
+                 someone has found your missing belongings.
+                 </p>
+            </div>
+
+            <div class="step">
+              <div class="step-icon">📞</div>
+              <h3>Step 4: Contact the Owner</h3>
+                <p>
+                 Use the available contact information to
+                 coordinate with the person who reported the item.
+                </p>
+            </div>
+
+            <div class="step">
+              <div class="step-icon">🤝</div>
+              <h3>Step 5: Get Your Item Back</h3>
+                <p>
+                 Verify ownership and arrange a safe meeting
+                 to return the lost item.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report form: fields are shown, but no data is saved without JavaScript or a backend -->
+    <div class="box report-box" id="report">
+        <h2>Report a Lost or Found Item</h2>
+        <p>Fill in the details below.</p>
+
+        <form action="#" method="get">
+            <label for="itemName">Item name:</label>
+            <input type="text" id="itemName" name="itemName" placeholder="Example: Water bottle" required>
+
+            <label for="itemLocation">Location:</label>
+            <input type="text" id="itemLocation" name="itemLocation" placeholder="Where was it lost or found?" required>
+
+            <label for="itemDate">Date:</label>
+            <input type="date" id="itemDate" name="itemDate" required>
+
+            <label for="itemStatus">Report type:</label>
+            <select id="itemStatus" name="itemStatus">
+                <option value="Lost">Lost</option>
+                <option value="Found">Found</option>
+            </select>
+            <label for="itemImage">Upload Item Image:</label>
+            <input
+               type="file"
+               id="itemImage"
+               name="itemImage"
+               accept="image/*"
+            >
+             <h3>Contact Information</h3>
+
+            <label for="contactName">Your Name:</label>
+            <input
+              type="text"
+              id="contactName"
+              name="contactName"
+              placeholder="Enter your full name"
+              required
+            >
+
+            <label for="contactEmail">Email Address:</label>
+            <input
+              type="email"
+              id="contactEmail"
+              name="contactEmail"
+              placeholder="Enter your email address"
+              required
+            >
+
+            <label for="contactPhone">Phone Number:</label>
+            <input
+             type="tel"
+             id="contactPhone"
+             name="contactPhone"
+             placeholder="Enter your phone number"
+             required
+            >
+
+            <button type="button" onclick="myFunction()">Submit Report</button>
+            
+        </form>
+            <div id="successMessage" class="success-message">
+             Your report has been submitted successfully!
+            </div>
+    </div>
+
+    <!-- Important instructions -->
+    <div class="box rules" id="rules">
+        <h2>Important Instructions</h2>
+        <ul>
+            <li>Tell us what your item looks like (color, size, brand).</li>
+            <li>Bring an ID when you come to pick up your item.</li>
+            <li>If you find something, please report it quickly.</li>
+            <li>Items not taken in 30 days may be given away.</li>
+        </ul>
+    </div> 
+
+    <section class="contact-us" id="contact">
+      <h2>Contact Us</h2>
+      <p>Need help with a lost or found item? Contact us.</p>
+
+        <div class="contact-details">
+         <p><strong>University:</strong> South Asian University</p>
+         <p><strong>Email:</strong> support@sau.ac.in</p>
+         <p><strong>Address:</strong> South Asian University Campus</p>
+        </div>
+    </section>
+
+    
+
+    <script>
+    function myFunction() {
+    const message = document.getElementById("successMessage");
+
+    if (message) {
+        message.style.display = "block";
+
+        setTimeout(function() {
+            message.style.display = "none";
+        }, 4000);
+    } else {
+        alert("Success message element not found!");
+    }
+}
+</script>
+
+   <footer class="footer">
+     <h3>SAU Lost and Found</h3>
+
+     <p>Helping students find their lost belongings.</p>
+
+        <div class="footer-links">
+         <a href="#how-it-works">How It Works</a>
+         <a href="#contact">Contact Us</a>
+        </div>
+
+        <p class="copyright">
+         &copy; 2026 SAU Lost and Found.
+         All Rights Reserved.
+        </p>
+    </footer>
+
+
+ <a href="#top" class="back-to-top">↑ Back to Top</a> 
+   
+</body>
+</html>
